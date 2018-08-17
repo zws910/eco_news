@@ -10,11 +10,11 @@ class Config():
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # Redis相关设置
     REDIS_HOST = '127.0.0.1'
-    REDES_PORT = '6379'
+    REDIS_PORT = '6379'
     # flask_session的配置信息
     SESSION_TYPE = "redis"
     SESSION_USE_SIGNER = True  # 让 cookie 中的 session_id 被加密签名处理
-    SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDES_PORT)
+    SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT)
     PERMANENT_SESSION_LIFETIME = 86400 * 2
 
 
