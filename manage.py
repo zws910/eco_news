@@ -7,18 +7,19 @@ from info import db, creat_app
 app = creat_app('development')
 
 
-@app.route('/')
-def index():
-    # 测试打印日志
-    logging.debug('测试debug')
-    logging.warning('测试warning')
-    logging.error('测试error')
-    logging.fatal('测试fatal')
-
-    # flask中用如下方法打印日志
-    # current_app.logger.error('测试error')
-
-    return 'Hello World!'
+# 视图函数抽取到modules  蓝图
+# @app.route('/')
+# def index():
+#     # 测试打印日志
+#     logging.debug('测试debug')
+#     logging.warning('测试warning')
+#     logging.error('测试error')
+#     logging.fatal('测试fatal')
+#
+#     # flask中用如下方法打印日志
+#     # current_app.logger.error('测试error')
+#
+#     return 'Hello World!'
 
 
 manager = Manager(app)
