@@ -1,3 +1,4 @@
+import logging
 import redis
 
 
@@ -17,9 +18,12 @@ class Config():
     SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT)
     PERMANENT_SESSION_LIFETIME = 86400 * 2
 
+    LOG_LEVEL = logging.DEBUG
+
 
 class ProductionConfig(Config):
-    pass
+    DEBUG = False
+    LOG_LEVEL = logging.WARNING
 
 
 class DevelopmentConfig(Config):
